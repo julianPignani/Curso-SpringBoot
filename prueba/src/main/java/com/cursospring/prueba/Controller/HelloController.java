@@ -42,19 +42,19 @@ public class HelloController {
     }
     //Función que calcula el IMC de una persona
     @GetMapping("/imc")
-    public String imc(@RequestParam float weigth,
-                      @RequestParam float heigth){
+    public String imc(@RequestParam float weight,
+                      @RequestParam float height){
 
-        float imc = weigth / (heigth * heigth);
+        float imc = weight / (height * height);
 
         if( imc < 18.5){
-            return  imc + " es un peso insificiente";
+            return  imc + " it's underweight";
         } else if (imc >= 18.5 && imc < 25) {
-            return  imc + " es un peso normal";
+            return  imc + " it's a normal weight";
         } else if (imc >= 25 && imc < 30) {
-            return  imc + " es un sobrepeso";
+            return  imc + " it's overweight";
         } else {
-            return  imc + " estado de Obesidad";
+            return  imc + " obesity status";
         }
 
     }
