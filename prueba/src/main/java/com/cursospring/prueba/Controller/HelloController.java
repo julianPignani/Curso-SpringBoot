@@ -58,4 +58,12 @@ public class HelloController {
         }
 
     }
+    // 1 galón es equivalente a 3,75841 litros
+    @GetMapping("/galon")
+    public String galonesALitros(@RequestParam double galones){
+
+        //Convertimos los galones a litros
+        double litros = (galones * 3.75841);
+        return  "Si necesitas cargar " + galones + " galones, entonces necesitas cargar " + litros + " litros";
+    }
 }
